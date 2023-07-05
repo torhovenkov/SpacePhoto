@@ -15,6 +15,7 @@
 		A2B8EFF32A3F77C800269A6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B8EFF12A3F77C800269A6C /* LaunchScreen.storyboard */; };
 		A2B8EFFB2A3F79D900269A6C /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8EFFA2A3F79D900269A6C /* PhotoInfo.swift */; };
 		A2B8EFFD2A3F7A8000269A6C /* PhotoInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8EFFC2A3F7A7F00269A6C /* PhotoInfoController.swift */; };
+		A2F305552A54E56C00152076 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F305542A54E56C00152076 /* DatePickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A2B8EFF42A3F77C800269A6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2B8EFFA2A3F79D900269A6C /* PhotoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
 		A2B8EFFC2A3F7A7F00269A6C /* PhotoInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoController.swift; sourceTree = "<group>"; };
+		A2F305542A54E56C00152076 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				A2B8EFE82A3F77C700269A6C /* SceneDelegate.swift */,
 				A2B8EFEA2A3F77C700269A6C /* ViewController.swift */,
 				A2B8EFEC2A3F77C700269A6C /* Main.storyboard */,
+				A2F305542A54E56C00152076 /* DatePickerViewController.swift */,
 				A2B8EFFA2A3F79D900269A6C /* PhotoInfo.swift */,
 				A2B8EFFC2A3F7A7F00269A6C /* PhotoInfoController.swift */,
 				A2B8EFEF2A3F77C800269A6C /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 			files = (
 				A2B8EFFB2A3F79D900269A6C /* PhotoInfo.swift in Sources */,
 				A2B8EFFD2A3F7A8000269A6C /* PhotoInfoController.swift in Sources */,
+				A2F305552A54E56C00152076 /* DatePickerViewController.swift in Sources */,
 				A2B8EFEB2A3F77C700269A6C /* ViewController.swift in Sources */,
 				A2B8EFE72A3F77C700269A6C /* AppDelegate.swift in Sources */,
 				A2B8EFE92A3F77C700269A6C /* SceneDelegate.swift in Sources */,

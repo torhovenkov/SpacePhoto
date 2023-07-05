@@ -7,21 +7,39 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, DatePickerViewControllerDelegate {
+    
+    
+    func dateSelected(date: Date) {
+        Task {
+            do {
+                let photoInfo = try await photoInfoController.fetchPhotoInfo(for: date)
+                try await updateUI(with: photoInfo)
+            } catch {
+                updateUI(with: error)
+            }
+        }
+    }
     
     let photoInfoController = PhotoInfoController()
-
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var copyrightLabel: UILabel!
     @IBOutlet var titleItem: UINavigationItem!
+    
+ 
     
     
     func updateUI(with photoInfo: PhotoInfo) async throws {
         self.titleItem.title = photoInfo.title
         self.descriptionLabel.text = photoInfo.description
         self.copyrightLabel.text = photoInfo.copyright ?? ""
-        self.imageView.image = try await PhotoInfo.fetchPhoto(from: photoInfo.url)
+        if photoInfo.mediaType == "video" {
+//           await UIApplication.shared.open(photoInfo.url)
+            self.imageView.image = try await PhotoInfo.fetchPhoto(from: photoInfo.thumbsUrl!)
+        } else {
+            self.imageView.image = try await PhotoInfo.fetchPhoto(from: photoInfo.url)
+        }
     }
     
     func updateUI(with error: Error) {
@@ -36,6 +54,8 @@ class ViewController: UIViewController {
         titleItem.title = ""
         descriptionLabel.text = ""
         copyrightLabel.text = ""
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = CGFloat(30)
         
         Task {
             do {
@@ -46,7 +66,11 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
+    @IBSegueAction func showDatePicker(_ coder: NSCoder) -> DatePickerViewController? {
+        return DatePickerViewController(coder: coder, delegate: self)
+    }
+    
 
 }
 
